@@ -26,7 +26,6 @@ const theUl = document.querySelector('ul');
  * Start Helper Functions
  *
 */
-
 const theButtom = document.createElement('button');
 theButtom.setAttribute('class', 'creat');
 theButtom.innerHTML = 'Creat Section';
@@ -83,7 +82,12 @@ window.onscroll = function () {
 // Build menu
 
 // Scroll to section on link click
-
+theUl.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById(`${e.target.dataset.nav}`).scrollIntoView({
+        behavior: "smooth", block: "center"
+    });
+});
 // Set sections as active
 
 
